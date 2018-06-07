@@ -21,6 +21,6 @@ class PlainComputer implements Computer
 
     public function getCost(): float
     {
-        return (float) null;
+        return (float) 80;
     }
 }
