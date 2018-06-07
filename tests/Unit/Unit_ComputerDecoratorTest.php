@@ -5,8 +5,18 @@ namespace Tests\Unit;
 use App\Classes\ComputerDecorator;
 use App\Classes\Contracts\Computer;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class PartDouble implements Computer {
+    public function getParts(): string
+    {
+        return (string) null;
+    }
+
+    public function getCost(): float
+    {
+        return (float) null;
+    }
+}
 
 class Unit_ComputerDecoratorTest extends TestCase
 {
@@ -15,7 +25,7 @@ class Unit_ComputerDecoratorTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->sut = new ComputerDecorator();
+        $this->sut = new ComputerDecorator(new PartDouble());
     }
 
     public function testInstantiation()
