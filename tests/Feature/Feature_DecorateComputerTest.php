@@ -34,4 +34,9 @@ class Feature_DecorateComputerTest extends TestCase
         $this->assertNotEquals($plainComputerCost, $this->sut->getCost());
         $this->assertEquals(($plainComputerCost + $motherboardCost), $this->sut->getCost());
     }
+
+////    public function testMultipleDecorations ()
+////    {
+//
+//    }
 }
