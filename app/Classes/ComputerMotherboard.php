@@ -2,7 +2,18 @@
 
 namespace App\Classes;
 
-class ComputerMotherboard
+use App\Classes\Contracts\Computer;
+
+class ComputerMotherboard implements Computer
 {
 
+    public function getParts(): string
+    {
+        // TODO: Implement getParts() method.
+    }
+
+    public function getCost(): float
+    {
+        // TODO: Implement getCost() method.
+    }
 }
