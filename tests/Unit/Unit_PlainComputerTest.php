@@ -35,4 +35,9 @@ class Unit_PlainComputerTest extends TestCase
     {
         $this->assertTrue(is_string($this->sut->getParts()));
     }
+
+    public function testGetCost ()
+    {
+        $this->assertTrue(is_float($this->sut->getCost()));
+    }
 }

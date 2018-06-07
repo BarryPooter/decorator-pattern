@@ -13,6 +13,6 @@ class PlainComputer implements Computer
 
     public function getCost(): float
     {
-        // TODO: Implement getCost() method.
+        return (float) null;
     }
 }
