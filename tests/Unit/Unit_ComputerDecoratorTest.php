@@ -27,4 +27,5 @@ class Unit_ComputerDecoratorTest extends TestCase
     {
         $this->assertInstanceOf(Computer::class, $this->sut);
     }
+
 }
