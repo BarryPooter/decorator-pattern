@@ -30,4 +30,9 @@ class Unit_PlainComputerTest extends TestCase
     {
         $this->assertInstanceOf(Computer::class, $this->sut);
     }
+
+    public function testGetParts ()
+    {
+        $this->assertTrue(is_string($this->sut->getParts()));
+    }
 }
