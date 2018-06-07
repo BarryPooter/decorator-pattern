@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Classes\ComputerDecorator;
+use App\Classes\ComputerFloppyReader;
 use App\Classes\ComputerMotherboard;
 use App\Classes\PlainComputer;
 use Tests\TestCase;
@@ -35,8 +36,15 @@ class Feature_DecorateComputerTest extends TestCase
         $this->assertEquals(($plainComputerCost + $motherboardCost), $this->sut->getCost());
     }
 
-////    public function testMultipleDecorations ()
-////    {
-//
-//    }
+    public function testMultipleDecorations ()
+    {
+        $plainComputerCost = (new PlainComputer())->getCost();
+        $motherboardCost = (new ComputerMotherboard())->getCost();
+        $floppyReaderCost = (new ComputerFloppyReader())->getCost();
+
+        $calculation = $plainComputerCost + $motherboardCost + $floppyReaderCost;
+        $this->sut = new ComputerDecorator(new ComputerMotherboard(new ComputerFloppyReader()));
+
+        $this->assertEquals($calculation, $this->sut->getCost());
+    }
 }

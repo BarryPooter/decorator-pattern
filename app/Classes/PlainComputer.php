@@ -7,8 +7,10 @@ use \App\Classes\Contracts\Computer;
 class PlainComputer implements Computer
 {
     protected $parts;
+    protected $tempComputer;
+    protected $cost;
 
-    public function __construct()
+    public function __construct(Computer $tempComputer = null)
     {
         $this->parts = (array) null;
         $this->parts[] = 'case';

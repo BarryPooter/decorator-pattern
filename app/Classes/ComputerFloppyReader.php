@@ -4,15 +4,19 @@ namespace App\Classes;
 
 use App\Classes\Contracts\Computer;
 
-class ComputerFloppyReader implements Computer
+class ComputerFloppyReader extends ComputerDecorator implements Computer
 {
+    public function __construct(Computer $tempComputer = null)
+    {
+        parent::__construct($tempComputer);
+    }
+
     public function getParts(): string
     {
-        // TODO: Implement getParts() method.
     }
 
     public function getCost(): float
     {
-        // TODO: Implement getCost() method.
+        return $this->cost + (float) 5;
     }
 }

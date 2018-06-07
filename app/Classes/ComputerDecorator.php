@@ -8,14 +8,18 @@ class ComputerDecorator extends PlainComputer implements Computer
 {
     protected $tempComputer;
 
-    public function __construct(Computer $tempComputer)
+    public function __construct (Computer $tempComputer = null)
     {
         parent::__construct();
-        $this->tempComputer = $tempComputer;
+
+        if (!empty($tempComputer)) {
+            $this->tempComputer = $tempComputer;
+            $this->cost += $this->tempComputer->getCost();
+        }
     }
 
     public function getCost () : float
     {
-        return (float) (new PlainComputer())->getCost() + (float) $this->tempComputer->getCost();
+        return parent::getCost() + (float) $this->cost;
     }
 }
